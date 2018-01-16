@@ -1,0 +1,21 @@
+<!-- <p id="notice"><%= notice %></p> -->
+<div class="wrapper">
+  <img src= <%= @article.img_url %> height=200 class="img-responsive">
+  <h1>
+    <strong><%= @article.title %></strong>
+  </h1>
+  <br>
+  <h5>
+    <strong>From <%= @article.author %></strong>
+  </h5>
+  <br>
+  <h5>
+    <strong>Created at <%= @article.create_date %></strong>
+  </h5>
+  <br>
+  <p>
+    <strong><%= @article.body %></strong>
+  </p>
+  <br>
+  <%= link_to 'Back', articles_path %>
+</div>

@@ -1,0 +1,30 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  width: 80%;
+  margin: 60px auto;
+  padding: 25px;
+  border: 1px solid #006400;
+  background-color: #ffffff;
+  opacity: 0.8;
+}
+
+h1, h2, h3, h4, h5 { text-align: center;}
+
+#author {
+  position: relative;
+  left: 25%;
+  margin-bottom: 25px;
+}
+
+body {
+  background-image: url("http://webneel.com/daily/sites/default/files/images/daily/08-2014/14-chinese-painting-birds.jpg");
+  background-size: cover;
+  opacity: 1.5;
+}
+
+p {
+  color: #000080;
+}
