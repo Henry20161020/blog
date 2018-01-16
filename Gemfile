@@ -55,5 +55,5 @@ gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.21.0'
 end
