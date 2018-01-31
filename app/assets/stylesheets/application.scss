@@ -13,8 +13,18 @@
  *= require_tree .
  *= require_self
  */
-body { margin-top: 50px; }
-
 #form-search { margin-top: 14px; }
 
+h1, h2, h3, h4, h5 { text-align: center;}
+
+body {
+  margin-top: 50px;
+  background-image: url("http://webneel.com/daily/sites/default/files/images/daily/08-2014/14-chinese-painting-birds.jpg");
+  background-size: cover;
+  opacity: 1.5;
+}
+
+p {
+  color: #000080;
+}
 @import "nav_color.scss"

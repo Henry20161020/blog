@@ -1,18 +1,20 @@
 <!-- <p id="notice"><%= notice %></p> -->
-<div class="wrapper">
+<div class="wrapper container-fluid">
   <h3>Any sufficiently advanced technology is indistinguishable from magic</h3>
   <h5 id="author">-Arthur C. Clarke</h5>
 
+  <div class="col-xs-12">
   <div id="new-article" class="col-xs-12 col-sm-6">
-    <a href="#">
-      <span class="glyphicon glyphicon-plus"></span>
-    </a>
-    <%= link_to 'New Blog', new_article_path %>
+      <a href="#">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+      <%= link_to 'New Blog', new_article_path %>
+    </div>
+    <div id="pagination" class="col-xs-10 col-sm-6">
+      <%= will_paginate @articles %>
+    </div>
   </div>
-  <div id="pagination" class="col-xs-12 col-sm-6">
-    <%= will_paginate @articles %>
-  </div>
-  <p><br><p>
+  <p><br><br><br><p>
   <div class="container-fluid">
     <div>
       <%= render @articles %>
