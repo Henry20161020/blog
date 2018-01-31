@@ -2,18 +2,23 @@
 <html>
   <head>
     <title>Blog</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -25,9 +30,31 @@
             Xing Li's Blog
           </div>
         </div> <!--end navbar-header -->
+        <div class="navbar-collapse collapse">
+          <%= form_with(url: articles_path, method: 'get', local: true, class: 'navbar-form navbar-left form-inline', id: 'form-search') do |form| %>
+            <%= form.text_field :q, id: 'q', value: params[:q], placeholder: 'Blog Title' %>
+            <%= form.submit 'Search' %>
+          <% end %>
+          <ul class="nav navbar-nav navbar-right pull-right">
 
-
+            <li><%= link_to "Blog", articles_path %></li>
+            <li>
+              <% if user_signed_in? %>
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <% else %>
+                <%= link_to('Login', new_user_session_path) %>
+              <% end %>
+            </li>
+          </ul>
+        </div> <!-- nav -->
+      </div> <!-- end nav container-->
     </nav> <!-- end navbar-->
+    <% if notice %>
+      <p id="notice" class="alert alert-info" role="alert"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p id="alert" class="alert alert-info" role="alert"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
 

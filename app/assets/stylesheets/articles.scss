@@ -2,22 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* For index page */
 .wrapper {
-  width: 80%;
+  width: 100%;
   margin: 60px auto;
-  padding: 25px;
+  padding: 25px auto;
   border: 1px solid #006400;
   background-color: #ffffff;
   opacity: 0.8;
 }
 
-h1, h2, h3, h4, h5 { text-align: center;}
-
+#new-article { padding-top: 22px; }
+#pagination { text-align: right; }
 #author {
   position: relative;
   left: 25%;
   margin-bottom: 25px;
 }
+
+h1, h2, h3, h4, h5 { text-align: center;}
 
 body {
   background-image: url("http://webneel.com/daily/sites/default/files/images/daily/08-2014/14-chinese-painting-birds.jpg");
@@ -27,4 +30,13 @@ body {
 
 p {
   color: #000080;
+}
+
+#show {
+  width: 80%;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+#article-image img {
+  width: 100%;
 }

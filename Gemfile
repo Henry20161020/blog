@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.3'
+ruby '2.5.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -55,5 +55,11 @@ gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
 
 group :production do
-  gem 'pg', '0.21.0'
+  gem 'pg'
 end
+
+gem 'devise'
+
+gem 'cancancan', '~> 1.10'
+
+gem 'will_paginate', '~> 3.1.0'

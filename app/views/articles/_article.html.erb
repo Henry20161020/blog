@@ -1,12 +1,16 @@
 <div class="col-xs-12 col-md-6">
-  <img src= <%= article.img_url %> height=50 class="img-responsive">
+  <img src= <%= article.img_url %> class="img-responsive">
   <h5><strong><%= article.tag %></strong></h5>
   <h3><%= link_to article.title, article %></h3>
   <h5><%= article.brief %></h5>
 
 
-  <br>
-  <%= link_to 'Edit', edit_article_path(article) %>
-  <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <p>(These two links should be set only visible to admin in the future)<p>
+
+  <div class="col-xs-12">
+    <% if signed_in? %>
+      <%= link_to ('<span class="glyphicon glyphicon-edit">Edit</span>').html_safe, edit_article_path(article) %>
+      <%= link_to ('<span class="glyphicon glyphicon-remove">Delete</span>').html_safe, articles_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+  <br><br>
 </div>

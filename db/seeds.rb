@@ -5,4 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Article.create(title: "Hello World", body: "just for testing", create_date: Date.today, tag: "journal")
+Article.create(title: "Hello World", body: "just for testing", create_date: Date.today, tag: "journal", img_url: "https://financialplan.byu.edu/sites/financialplan1/files/styles/content_page_module_size/public/scholarships.jpg?itok=EHCleXA0")

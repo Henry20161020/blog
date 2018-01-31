@@ -1,6 +1,8 @@
 <!-- <p id="notice"><%= notice %></p> -->
-<div class="wrapper">
-  <img src= <%= @article.img_url %> height=200 class="img-responsive">
+<div class="wrapper" id="show">
+  <div id="article-image">
+    <img src= <%= @article.img_url %> class="img-responsive">
+  </div>
   <h1>
     <strong><%= @article.title %></strong>
   </h1>
@@ -18,4 +20,6 @@
   </p>
   <br>
   <%= link_to 'Back', articles_path %>
+  <%= render 'new_comment' %>
+  <%= render 'comments' %>
 </div>

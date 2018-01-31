@@ -1,0 +1,12 @@
+<% if signed_in? %>
+  <h4>Add a review:</h4>
+  <%= form_for([@article, @article.comments.build]) do |f| %>
+    <p>
+      <%= f.label :body, "I have something to say" %><br>
+      <%= f.text_area :body, class: "col-xs-12", id: "new-comment", placeholder: "Please enter at least 5 characters"%>
+    </p>
+    <p>
+      <%= f.submit "Submit" %>
+    </p>
+  <% end %>
+<% end %>
